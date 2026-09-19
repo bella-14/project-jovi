@@ -1,37 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/output.css">
     <title>Galeria inteligente</title>
 </head>
-<body>
-    <main>
-        <h1>Galeria</h1>
-
-        <label>
+<body class="bg-slate-900 text-white min-h-screen">
+    <main class="max-w-6x1 mx-auto px-6 py-10">
+        
+<h1>Galeria</h1>
+        <label class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:border-purple-500">
             <input type="search" id="pesquisa" placeholder="procurar por...">
         </label>
 
         <section>
-            <button>Todos</button>
-             <button>Viagem</button>
-             <button>Familia</button>
-             <button>Trabalho</button>
+            <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700">Todos</button>
+             <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-600">Viagem</button>
+             <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-600">Familia</button>
+             <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-600">Trabalho</button>
         </section>
 
-        <section>
-            <p>12 fotos duplicadas - Liberar espaço</p>
-            <button>Limpar</button>
+        <section class="border border-purple-500/30 rounded-xl p-5 mb-8 flex flex-col md:flex-row md:items-center md:justify-center gap-4">
+            <p class="font-semibold">12 fotos duplicadas - Liberar espaço</p>
+            <button class="bg-purple-600 hover:bg-purple-700 px-5 py-2 rounded-lg font-medium">Limpar</button>
         </section>
 
-        <footer>
-            <a href="./index.html">Home</a>
-            <a href="./camera.html">Camera</a>
-            <a href="./galeria.html">Galeria</a>
+        <section class="grid grid-cols-4 gap-6 mt-8">
+
+            <div class="col-span-4 row-span-2">
+            <img src="../imagens/can-you-give-me-advice-on-how-to-choose-images-for-a-v0-nbpt62pl503d1.webp" alt="galeria" class="w-full h-full object-cover rounded-xl">
+</div>
+
+<div class="col-span-8 grid grid-cols-3 gap-4">
+            <img src="../imagens/images.jpg" alt="galeria" class="w-full h-40 object-cover rounded-xl">
+</div>
+            <img src="../imagens/photo-1707344088547-3cf7cea5ca49.avif" alt="galeria" class="w-full h-40 object-cover rounded-xl">
+
+                <img src="../imagens/images (1).jpg" alt="galeria" class="w-full h-40 object-cover rounded-xl">
+            </div>
+
+            <div>
+                <img src="../imagens/images (2).jpg" alt="galeria" class="w-full h-32 object-cover rounded-xl">
+            </div>
+            <div>
+                <img src="../imagens/6a6012c2ab8ce01ccffee7bbf2f5ee59.webp" alt="galeria" class="w-full h-32 object-cover rounded-xl"> 
+            </div>
+        </section>
+
+
+
+
+
+        <footer class="fixed bottom-0 left-0 w-full bg-slate-900 borde border-slate-800">
+
+        <nav>
+            <a href="./index.html" class="text-slate-400 hover:text-white">Home</a>
+            <a href="./camera.html" class="text-slate-400 hover:text-white">Camera</a>
+            <a href="./galeria.html" class="text-slate-400 hover:text-white">Galeria</a>
             <a>Perfil</a>
-        </footer>
+        </nav>
     </main>
+</footer>
+</body>
 
 </body>
 </html>
