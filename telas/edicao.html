@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <title>Edição Assistida | JOVI SnapFlow</title>
+  </head>
+
+  <body
+    class="min-h-screen overflow-x-hidden bg-slate-950 text-slate-100 antialiased"
+  >
+    <header class="mx-auto w-full max-w-5xl px-4 pb-4 pt-6 sm:px-6">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="min-w-0">
+          <p class="mb-1 text-sm text-slate-400">JOVI SnapFlow</p>
+
+          <h1 class="text-2xl font-bold tracking-tight">
+            Edição <span class="text-amber-400">Assistida</span>
+          </h1>
+        </div>
+
+        <a
+          href="./galeria.html"
+          class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+        >
+          ← Voltar
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto w-full max-w-5xl px-4 pb-28 sm:px-6">
+      <div class="mt-4 grid min-w-0 gap-6 lg:grid-cols-2">
+        <!-- Imagem selecionada -->
+        <section class="min-w-0">
+          <div
+            class="relative w-full overflow-hidden rounded-3xl border border-slate-700 bg-slate-900"
+          >
+            <img
+              id="imagem-preview"
+              src="../imagens/images (2).jpg"
+              alt="Imagem selecionada para edição"
+              class="aspect-[4/3] h-full w-full object-cover"
+            />
+
+            <div
+              class="absolute left-3 top-3 rounded-full border border-white/10 bg-slate-950/70 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md"
+            >
+              Pré-visualização
+            </div>
+
+            <button
+              id="botao-comparar"
+              type="button"
+              class="absolute bottom-3 right-3 rounded-xl bg-slate-950/75 px-3 py-2 text-xs font-medium text-white backdrop-blur-md transition hover:bg-slate-950"
+            >
+              Ver original
+            </button>
+          </div>
+
+          <!-- Sugestão principal -->
+          <div
+            class="mt-4 rounded-2xl border border-amber-400/20 bg-slate-900 p-4"
+          >
+            <div class="flex items-start gap-3">
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-xs font-bold text-amber-300"
+              >
+                IA
+              </div>
+
+              <div class="min-w-0">
+                <h2 class="font-semibold">Sugestão da JOVI</h2>
+
+                <p class="mt-1 text-sm leading-6 text-slate-400">
+                  Aumente o brilho em 12% e use tons naturais para destacar as
+                  cores da cena.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ferramentas -->
+        <section class="min-w-0 space-y-5">
+          <!-- Correções automáticas -->
+          <div
+            class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900 p-4 sm:p-5"
+          >
+            <h2 class="text-lg font-bold">Sugestões rápidas</h2>
+
+            <div class="mt-4 space-y-3">
+              <div
+                class="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-slate-950/60 p-3"
+              >
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">Correção automática</p>
+
+                  <p class="mt-1 text-xs text-slate-500">
+                    Ajusta luz e cores
+                  </p>
+                </div>
+
+                <button
+                  id="botao-correcao"
+                  type="button"
+                  class="rounded-lg bg-amber-400 px-3 py-2 text-xs font-semibold text-slate-950 transition hover:bg-amber-300"
+                >
+                  Aplicar
+                </button>
+              </div>
+
+              <div
+                class="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-slate-950/60 p-3"
+              >
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">Corte sugerido</p>
+
+                  <p class="mt-1 text-xs text-slate-500">
+                    Formato ideal para publicação
+                  </p>
+                </div>
+
+                <button
+                  id="botao-corte"
+                  type="button"
+                  class="rounded-lg border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+                >
+                  Aplicar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtros -->
+          <div
+            class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900 p-4 sm:p-5"
+          >
+            <h2 class="text-lg font-bold">Filtros</h2>
+
+            <div class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
+              <button
+                type="button"
+                data-efeito="natural"
+                class="w-full min-w-0 rounded-xl bg-amber-400 px-2 py-2.5 text-sm font-medium text-slate-950"
+              >
+                Natural
+              </button>
+
+              <button
+                type="button"
+                data-efeito="urbano"
+                class="w-full min-w-0 rounded-xl border border-slate-700 px-2 py-2.5 text-sm text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+              >
+                Urbano
+              </button>
+
+              <button
+                type="button"
+                data-efeito="quente"
+                class="w-full min-w-0 rounded-xl border border-slate-700 px-2 py-2.5 text-sm text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+              >
+                Quente
+              </button>
+
+              <button
+                type="button"
+                data-efeito="frio"
+                class="w-full min-w-0 rounded-xl border border-slate-700 px-2 py-2.5 text-sm text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+              >
+                Frio
+              </button>
+
+              <button
+                type="button"
+                data-efeito="preto-branco"
+                class="col-span-2 w-full min-w-0 rounded-xl border border-slate-700 px-2 py-2.5 text-sm text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300 sm:col-span-1"
+              >
+                P&B
+              </button>
+            </div>
+          </div>
+
+          <!-- Ajustes -->
+          <div
+            class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900 p-4 sm:p-5"
+          >
+            <h2 class="text-lg font-bold">Ajustes</h2>
+
+            <div class="mt-5 space-y-6">
+              <div class="min-w-0">
+                <div class="mb-2 flex items-center justify-between">
+                  <label
+                    for="temperatura"
+                    class="text-sm font-medium text-slate-300"
+                  >
+                    Temperatura
+                  </label>
+
+                  <span
+                    id="valor-temperatura"
+                    class="text-xs font-medium text-amber-300"
+                  >
+                    50
+                  </span>
+                </div>
+
+                <input
+                  id="temperatura"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="block w-full max-w-full cursor-pointer accent-amber-400"
+                />
+              </div>
+
+              <div class="min-w-0">
+                <div class="mb-2 flex items-center justify-between">
+                  <label
+                    for="brilho"
+                    class="text-sm font-medium text-slate-300"
+                  >
+                    Brilho
+                  </label>
+
+                  <span
+                    id="valor-brilho"
+                    class="text-xs font-medium text-amber-300"
+                  >
+                    62
+                  </span>
+                </div>
+
+                <input
+                  id="brilho"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="62"
+                  class="block w-full max-w-full cursor-pointer accent-amber-400"
+                />
+              </div>
+
+              <div class="min-w-0">
+                <div class="mb-2 flex items-center justify-between">
+                  <label
+                    for="contraste"
+                    class="text-sm font-medium text-slate-300"
+                  >
+                    Contraste
+                  </label>
+
+                  <span
+                    id="valor-contraste"
+                    class="text-xs font-medium text-amber-300"
+                  >
+                    50
+                  </span>
+                </div>
+
+                <input
+                  id="contraste"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="block w-full max-w-full cursor-pointer accent-amber-400"
+                />
+              </div>
+            </div>
+
+            <p class="mt-4 text-xs leading-5 text-slate-500">
+              Os valores serão atualizados pelo JavaScript posteriormente.
+            </p>
+          </div>
+
+          <!-- Formatos -->
+          <div
+            class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900 p-4 sm:p-5"
+          >
+            <h2 class="text-lg font-bold">Formato da imagem</h2>
+
+            <div
+              class="mt-4 grid grid-cols-1 gap-2 min-[340px]:grid-cols-3"
+            >
+              <button
+                type="button"
+                data-formato="quadrado"
+                class="w-full min-w-0 rounded-xl border border-slate-700 px-2 py-3 text-sm text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+              >
+                Quadrado
+              </button>
+
+              <button
+                type="button"
+                data-formato="stories"
+                class="w-full min-w-0 rounded-xl border border-slate-700 px-2 py-3 text-sm text-slate-300 transition hover:border-amber-400/50 hover:text-amber-300"
+              >
+                Stories
+              </button>
+
+              <button
+                type="button"
+                data-formato="original"
+                class="w-full min-w-0 rounded-xl border border-amber-400/50 bg-amber-400/10 px-2 py-3 text-sm text-amber-300"
+              >
+                Original
+              </button>
+            </div>
+          </div>
+
+          <a
+            id="botao-salvar"
+            href="./compartilhamentoia.html"
+            class="block w-full rounded-2xl bg-amber-400 px-5 py-4 text-center font-bold text-slate-950 transition hover:bg-amber-300"
+          >
+            Salvar edição
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <!-- Navegação inferior -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 w-full border-t border-slate-800 bg-slate-950/95 backdrop-blur-md"
+    >
+      <div
+        class="mx-auto grid w-full max-w-5xl grid-cols-4 px-2 py-3 text-center text-xs"
+      >
+        <a
+          href="./index.html"
+          class="min-w-0 text-slate-400 transition hover:text-amber-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Home
+        </a>
+
+        <a
+          href="./camera.html"
+          class="min-w-0 text-slate-400 transition hover:text-amber-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Câmera
+        </a>
+
+        <a
+          href="./galeria.html"
+          class="min-w-0 text-slate-400 transition hover:text-amber-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Galeria
+        </a>
+
+        <a
+          href="./compartilhamentoia.html"
+          class="min-w-0 break-words text-slate-400 transition hover:text-amber-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Compartilhar
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

@@ -1,68 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/output.css">
-    <title>Galeria inteligente</title>
-</head>
-<body class="bg-slate-900 text-white min-h-screen">
-    <main class="max-w-6x1 mx-auto px-6 py-10">
-        
-<h1>Galeria</h1>
-        <label class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:border-purple-500">
-            <input type="search" id="pesquisa" placeholder="procurar por...">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <title>Galeria  | JOVI SnapFlow</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <header class="mx-auto max-w-5xl px-4 pb-4 pt-6 sm:px-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="mb-1 text-sm text-slate-400">JOVI SnapFlow</p>
+
+          <h1 class="text-2xl font-bold tracking-tight">
+            Galeria 
+          </h1>
+        </div>
+
+        <a
+          href="./index.html"
+          class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition hover:border-violet-400/50 hover:text-violet-300"
+        >
+          ← Voltar
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 pb-28 sm:px-6">
+      <!-- Pesquisa -->
+      <section class="mt-4">
+        <label
+          class="flex items-center gap-3 rounded-2xl border border-slate-700 bg-slate-900 px-4 py-3 transition focus-within:border-violet-400"
+        >
+          <span class="text-lg text-slate-500">⌕</span>
+
+          <input
+            id="pesquisa"
+            type="search"
+            placeholder="Pesquisar fotos..."
+            class="w-full bg-transparent text-sm text-slate-100 outline-none placeholder:text-slate-500"
+          />
         </label>
+      </section>
 
-        <section>
-            <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700">Todos</button>
-             <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-600">Viagem</button>
-             <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-600">Familia</button>
-             <button class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-600">Trabalho</button>
-        </section>
+      <!-- Filtros -->
+      <section class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
+        <button
+          type="button"
+          data-filtro="todos"
+          class="w-full min-w-0 rounded-full bg-violet-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-violet-400"
+        >
+          Todos
+        </button>
 
-        <section class="border border-purple-500/30 rounded-xl p-5 mb-8 flex flex-col md:flex-row md:items-center md:justify-center gap-4">
-            <p class="font-semibold">12 fotos duplicadas - Liberar espaço</p>
-            <button class="bg-purple-600 hover:bg-purple-700 px-5 py-2 rounded-lg font-medium">Limpar</button>
-        </section>
+        <button
+          type="button"
+          data-filtro="viagem"
+          class="w-full min-w-0 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:border-violet-400/50 hover:text-violet-300"
+        >
+          Viagem
+        </button>
 
-        <section class="grid grid-cols-4 gap-6 mt-8">
+        <button
+          type="button"
+          data-filtro="natureza"
+          class="w-full min-w-0 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:border-violet-400/50 hover:text-violet-300"
+        >
+          Natureza
+        </button>
 
-            <div class="col-span-4 row-span-2">
-            <img src="../imagens/can-you-give-me-advice-on-how-to-choose-images-for-a-v0-nbpt62pl503d1.webp" alt="galeria" class="w-full h-full object-cover rounded-xl">
-</div>
+        <button
+          type="button"
+          data-filtro="momentos"
+          class="w-full min-w-0 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:border-violet-400/50 hover:text-violet-300"
+        >
+          Momentos
+        </button>
 
-<div class="col-span-8 grid grid-cols-3 gap-4">
-            <img src="../imagens/images.jpg" alt="galeria" class="w-full h-40 object-cover rounded-xl">
-</div>
-            <img src="../imagens/photo-1707344088547-3cf7cea5ca49.avif" alt="galeria" class="w-full h-40 object-cover rounded-xl">
+        <button
+          type="button"
+          data-filtro="cidade"
+          class="w-full min-w-0 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:border-violet-400/50 hover:text-violet-300"
+        >
+          Cidade
+        </button>
+      </section>
 
-                <img src="../imagens/images (1).jpg" alt="galeria" class="w-full h-40 object-cover rounded-xl">
+      <!-- Fotos duplicadas -->
+      <section class="mt-5">
+        <div
+          class="flex flex-col gap-4 rounded-2xl border border-amber-400/20 bg-slate-900 p-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-sm font-bold text-amber-300"
+            >
+              12
             </div>
 
             <div>
-                <img src="../imagens/images (2).jpg" alt="galeria" class="w-full h-32 object-cover rounded-xl">
+              <h2 class="font-semibold text-slate-100">
+                Fotos duplicadas
+              </h2>
+
+              <p class="mt-1 text-sm text-slate-400">
+                A JOVI encontrou arquivos semelhantes que podem ser removidos.
+              </p>
             </div>
-            <div>
-                <img src="../imagens/6a6012c2ab8ce01ccffee7bbf2f5ee59.webp" alt="galeria" class="w-full h-32 object-cover rounded-xl"> 
-            </div>
-        </section>
+          </div>
 
+          <button
+            id="botao-limpar"
+            type="button"
+            class="rounded-xl bg-amber-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-amber-300"
+          >
+            Liberar espaço
+          </button>
+        </div>
+      </section>
 
+      <!-- Título da galeria -->
+      <section class="mt-8 flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold">Suas fotos</h2>
+          <p class="mt-1 text-sm text-slate-400">6 itens encontrados</p>
+        </div>
 
+        <button
+          type="button"
+          class="text-sm font-medium text-violet-300 transition hover:text-violet-200"
+        >
+          Selecionar
+        </button>
+      </section>
 
+      <!-- Galeria de imagens -->
+      <section
+        id="galeria-fotos"
+        class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"
+      >
+        <a
+          href="./edicao.html"
+          data-categoria="viagem"
+          class="group relative col-span-2 overflow-hidden rounded-2xl border border-slate-800"
+        >
+          <img
+            src="../imagens/can-you-give-me-advice-on-how-to-choose-images-for-a-v0-nbpt62pl503d1.webp"
+            alt="Fotografia de viagem"
+            class="aspect-video h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
 
-        <footer class="fixed bottom-0 left-0 w-full bg-slate-900 borde border-slate-800">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+          ></div>
 
-        <nav>
-            <a href="./index.html" class="text-slate-400 hover:text-white">Home</a>
-            <a href="./camera.html" class="text-slate-400 hover:text-white">Camera</a>
-            <a href="./galeria.html" class="text-slate-400 hover:text-white">Galeria</a>
-            <a>Perfil</a>
-        </nav>
+          <div class="absolute bottom-0 left-0 p-4">
+            <p class="font-semibold text-white">Viagem</p>
+            <p class="mt-1 text-xs text-slate-300">12 fotos</p>
+          </div>
+        </a>
+
+        <a
+          href="./edicao.html"
+          data-categoria="momentos"
+          class="group relative overflow-hidden rounded-2xl border border-slate-800"
+        >
+          <img
+            src="../imagens/images.jpg"
+            alt="Céu colorido"
+            class="aspect-square h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute bottom-2 left-2 rounded-full bg-slate-950/70 px-2.5 py-1 text-xs text-white backdrop-blur-sm"
+          >
+            Momentos
+          </span>
+        </a>
+
+        <a
+          href="./edicao.html"
+          data-categoria="cidade"
+          class="group relative overflow-hidden rounded-2xl border border-slate-800"
+        >
+          <img
+            src="../imagens/photo-1707344088547-3cf7cea5ca49.avif"
+            alt="Paisagem urbana"
+            class="aspect-square h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute bottom-2 left-2 rounded-full bg-slate-950/70 px-2.5 py-1 text-xs text-white backdrop-blur-sm"
+          >
+            Cidade
+          </span>
+        </a>
+
+        <a
+          href="./edicao.html"
+          data-categoria="natureza"
+          class="group relative overflow-hidden rounded-2xl border border-slate-800"
+        >
+          <img
+            src="../imagens/images (1).jpg"
+            alt="Praia entre montanhas"
+            class="aspect-square h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute bottom-2 left-2 rounded-full bg-slate-950/70 px-2.5 py-1 text-xs text-white backdrop-blur-sm"
+          >
+            Natureza
+          </span>
+        </a>
+
+        <a
+          href="./edicao.html"
+          data-categoria="momentos"
+          class="group relative overflow-hidden rounded-2xl border border-slate-800"
+        >
+          <img
+            src="../imagens/images (2).jpg"
+            alt="Árvore florida"
+            class="aspect-square h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute bottom-2 left-2 rounded-full bg-slate-950/70 px-2.5 py-1 text-xs text-white backdrop-blur-sm"
+          >
+            Momentos
+          </span>
+        </a>
+
+        <a
+          href="./edicao.html"
+          data-categoria="viagem"
+          class="group relative overflow-hidden rounded-2xl border border-slate-800"
+        >
+          <img
+            src="../imagens/6a6012c2ab8ce01ccffee7bbf2f5ee59.webp"
+            alt="Fotografia de paisagem"
+            class="aspect-square h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute bottom-2 left-2 rounded-full bg-slate-950/70 px-2.5 py-1 text-xs text-white backdrop-blur-sm"
+          >
+            Viagem
+          </span>
+        </a>
+      </section>
     </main>
-</footer>
-</body>
 
-</body>
+    <!-- Navegação inferior -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-800 bg-slate-950/95 backdrop-blur-md"
+    >
+      <div
+        class="mx-auto grid max-w-5xl grid-cols-4 px-2 py-3 text-center text-xs"
+      >
+        <a
+          href="./index.html"
+          class="text-slate-400 transition hover:text-violet-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Home
+        </a>
+
+        <a
+          href="./camera.html"
+          class="text-slate-400 transition hover:text-violet-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Câmera
+        </a>
+
+        <a href="./galeria.html" class="font-medium text-violet-300">
+          <span class="mb-1 block text-lg text-violet-400">●</span>
+          Galeria
+        </a>
+
+        <a
+          href="./compartilhamentoia.html"
+          class="text-slate-400 transition hover:text-violet-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Compartilhar
+        </a>
+      </div>
+    </nav>
+  </body>
 </html>

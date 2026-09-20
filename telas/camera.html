@@ -1,56 +1,198 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/output.css">
-    <title>JOVI- Captura Inteligente</title>
-</head>
-<body class="bg-slate-900 text-white min-h-screen">
-    <header class="flex items-center justify-between border-b border-slate-800 px-6 py-5">
-        <h1 class="text-2xl font-bold tracking-wide text-white">JOVI</h1>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <title>Captura IA | JOVI SnapFlow</title>
+  </head>
 
-        <a href="./index.html"
-        class="rounded-xl bg-sky-50 px-4 py-3 font-medium">Voltar</a>
+  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <header class="mx-auto max-w-5xl px-4 pb-4 pt-6 sm:px-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="mb-1 text-sm text-slate-400">JOVI SnapFlow</p>
+          <h1 class="text-2xl font-bold tracking-tight">
+            Captura <span class="text-cyan-400">IA</span>
+          </h1>
+        </div>
+
+        <a
+          href="./index.html"
+          class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition hover:border-cyan-400/50 hover:text-cyan-300"
+        >
+          ← Voltar
+        </a>
+      </div>
     </header>
 
-    <main class="mx-auto max-w-6x1 px-6 py-10">
-        <section>
-            
-            <h2 class="mb-8 text-3xl font-bold text-cyan-400 md:text-4xl">Captura inteligente</h2>
+    <main class="mx-auto max-w-5xl px-4 pb-28 sm:px-6">
+      <!-- Visualização da câmera -->
+      <section class="mt-4">
+        <div
+          class="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-700 bg-slate-900 shadow-2xl shadow-cyan-950/20 sm:aspect-video"
+        >
+          <img
+            src="../imagens/images (1).jpg"
+            alt="Paisagem sendo analisada pela câmera"
+            class="h-full w-full object-cover"
+          />
 
-            <div class="grid grid-cols-4 gap-4 ms:grid-cols-4 m-5">
-                <div class="rounded-xl border border-slate-700 bg-slate-900 p-5">
-                    <span class="text-sm text-slate-400">Iluminaçao</span>
-                    <strong class="mt-2 block text-x1 text-cyan-400">Boa</strong>
-                </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30"
+          ></div>
 
-                <div class="rounded-xl borde border-slate-700 p-5">
-                    <span class="text-sm text-slate-400">Exposiçao</span>
-                    <strong class="mt-2 block text-x1">+0,3</strong>
-                </div>
+          <div
+            class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-slate-950/70 px-3 py-1.5 text-xs font-medium text-emerald-300 backdrop-blur-md"
+          >
+            <span
+              class="h-2 w-2 rounded-full bg-emerald-400"
+            ></span>
+            Câmera pronta
+          </div>
 
-                <div class="rounded-xl border border-slate-700 p-5">
-                    <span class="text-sm text-slate-400">Velocidade</span>
-                    <strong class="mt-2 block text-x1">1/250s</strong>
-                </div>
+          <!-- Moldura de foco -->
+          <div
+            class="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-2 border-white/70 sm:h-32 sm:w-32"
+          ></div>
 
-                <div class="rounded-xl border border-slate-700 p-5">
-                    <span class="text-sm text-slate-400">ISO</span>
-                    <strong class="mt-2 block text-x1">80</strong>
-                </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-xs font-medium uppercase tracking-wider text-cyan-300">
+              Cena detectada
+            </p>
+            <h2 class="mt-1 text-xl font-bold text-white">
+              Paisagem natural
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Informações da câmera -->
+      <section class="mt-6">
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900 p-4"
+          >
+            <p class="text-xs text-slate-400">Iluminação</p>
+            <p class="mt-2 font-semibold text-emerald-300">Boa</p>
+          </article>
+
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900 p-4"
+          >
+            <p class="text-xs text-slate-400">Exposição</p>
+            <p class="mt-2 font-semibold text-slate-100">+0,3</p>
+          </article>
+
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900 p-4"
+          >
+            <p class="text-xs text-slate-400">Velocidade</p>
+            <p class="mt-2 font-semibold text-slate-100">1/250s</p>
+          </article>
+
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900 p-4"
+          >
+            <p class="text-xs text-slate-400">ISO</p>
+            <p class="mt-2 font-semibold text-slate-100">80</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sugestão da IA -->
+      <section class="mt-6">
+        <div
+          class="rounded-2xl border border-violet-400/20 bg-slate-900 p-5"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-400/10 text-xs font-bold text-violet-300"
+            >
+              IA
             </div>
 
-            <div class="p-50">
-                <h3>JOVI sugere:</h3>      
-            <p>Analisando o ambiente</p>
-            </div>
+            <div>
+              <h2 class="font-semibold text-slate-100">Sugestão da JOVI</h2>
 
-            <div class="">
-                <button>Capturar</button>
-            </div>
+              <p class="mt-1 text-sm leading-6 text-slate-400">
+                Mantenha o horizonte centralizado e diminua levemente a
+                exposição para preservar os detalhes do céu.
+              </p>
 
-        </section>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs text-cyan-300"
+                >
+                  Paisagem
+                </span>
+
+                <span
+                  class="rounded-full bg-amber-400/10 px-3 py-1 text-xs text-amber-300"
+                >
+                  Luz natural
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Botão de captura -->
+      <section class="mt-8 flex flex-col items-center">
+        <button
+          id="botao-capturar"
+          type="button"
+          aria-label="Capturar fotografia"
+          class="group flex h-20 w-20 items-center justify-center rounded-full border-4 border-slate-700 bg-slate-900 transition hover:scale-105 hover:border-cyan-400 active:scale-95"
+        >
+          <span
+            class="h-14 w-14 rounded-full bg-cyan-400 transition group-hover:bg-cyan-300"
+          ></span>
+        </button>
+
+        <p class="mt-3 text-sm text-slate-400">
+          Toque para capturar
+        </p>
+      </section>
     </main>
-</body>
+
+    <!-- Navegação inferior -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-800 bg-slate-950/95 backdrop-blur-md"
+    >
+      <div
+        class="mx-auto grid max-w-5xl grid-cols-4 px-2 py-3 text-center text-xs"
+      >
+        <a
+          href="./index.html"
+          class="text-slate-400 transition hover:text-cyan-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Home
+        </a>
+
+        <a href="./camera.html" class="font-medium text-cyan-300">
+          <span class="mb-1 block text-lg text-cyan-400">●</span>
+          Câmera
+        </a>
+
+        <a
+          href="./galeria.html"
+          class="text-slate-400 transition hover:text-cyan-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Galeria
+        </a>
+
+        <a
+          href="./compartilhamentoia.html"
+          class="text-slate-400 transition hover:text-cyan-300"
+        >
+          <span class="mb-1 block text-lg">•</span>
+          Compartilhar
+        </a>
+      </div>
+    </nav>
+  </body>
 </html>
