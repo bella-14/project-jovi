@@ -1,4 +1,4 @@
-// js/camera.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const btnCapturar = document.getElementById('botao-capturar');
@@ -10,22 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnCapturar) {
         btnCapturar.addEventListener('click', () => {
-            // 1. Efeito visual de Flash ao capturar
+           
             executarEfeitoFlash(containerCamera);
 
-            // 2. Feedback visual no botão
+            
             btnCapturar.classList.add('scale-90');
             setTimeout(() => btnCapturar.classList.remove('scale-90'), 150);
 
-            // 3. Simulação de atualização dos parâmetros da câmara após captura
+           
             simularAnaliseIA(elementoExposicao, elementoISO);
         });
     }
 });
 
-/**
- * Cria um flash branco temporário sobre a moldura da câmara
- */
+
 function executarEfeitoFlash(container) {
     if (!container) return;
 
@@ -39,9 +37,7 @@ function executarEfeitoFlash(container) {
     }, 100);
 }
 
-/**
- * Simula a IA a reanalisar a cena e a ajustar ISO e Exposição
- */
+
 function simularAnaliseIA(exposicaoEl, isoEl) {
     const exposicoes = ['+0.0', '+0.3', '-0.3', '+0.7'];
     const isos = ['64', '80', '100', '200'];
